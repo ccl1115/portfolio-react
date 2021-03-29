@@ -13,12 +13,14 @@ export default function Header({title, subtitle}) {
         <a
           className="p-2 rounded-lg hover:text-gray-800 hover:bg-gray-400 hover:shadow-md transition-all"
           href="https://blog.bbsimonyu.com"
+          target="blank"
         >
           BLOG
         </a>
         <a
           className="p-2 rounded-lg hover:bg-gray-400 hover:shadow-md transition-all"
           href="https://github.com/ccl1115"
+          target="blank"
         >
           <img className="w-6 h-6" src="./assets/ic_github.png"/>
         </a>

@@ -13,6 +13,11 @@ export default function App() {
   let topButton = useRef(null);
   let header = useRef(null);
 
+  let projects = useRef(null);
+  let languages = useRef(null);
+  let tools = useRef(null);
+  let platforms = useRef(null);
+
   let preTop;
 
   function onScroll(event) {
@@ -28,6 +33,21 @@ export default function App() {
       gsap.to(topButton.current, { scale: 0 });
     }
     preTop = top;
+
+    scrollFadeIn(top, languages);
+    scrollFadeIn(top, tools);
+    scrollFadeIn(top, projects);
+    scrollFadeIn(top, platforms);
+  }
+
+  function scrollFadeIn(top, el) {
+    if (top + html.clientHeight / 2 + 500 > el.current.offsetTop) {
+      const a = (top + html.clientHeight / 2 - el.current.offsetTop) / 300;
+      gsap.set(el.current, {
+        opacity: Math.min(1, a),
+        y: Math.max(0, (1 - a) * 400),
+      });
+    }
   }
 
   function toTop() {
@@ -65,10 +85,10 @@ export default function App() {
       <div className="py-10"/>
 
       <Intro />
-      <Languages />
-      <Platforms />
-      <Projects />
-      <Tools />
+      <Languages ref={languages} />
+      <Platforms ref={platforms} />
+      <Projects ref={projects} />
+      <Tools ref={tools} />
 
       <Footer />
     </div>

@@ -1,9 +1,9 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import Icon from "./Icon.jsx";
 
-export default function Tools() {
+export default forwardRef((_, ref) => {
   return (
-    <div className="blocks2 text-white">
+    <div ref={ref} className="blocks2 text-white">
       <div className="col-span-2 lg:col-span-4 text-center text-2xl mb-15">
         使用的工具
       </div>
@@ -38,4 +38,4 @@ export default function Tools() {
       <div className="mt-1 text-sm">Asana和Trello的项目看板管理</div>
     </div>
   );
-}
+});

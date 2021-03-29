@@ -1,8 +1,8 @@
-import React from 'react';
-import Icon from './Icon';
-export default function Platforms() {
+import React, { forwardRef } from "react";
+import Icon from "./Icon";
+export default forwardRef((_, ref) => {
   return (
-    <div className="blocks text-white">
+    <div ref={ref} className="blocks text-white">
       <div className="col-span-3 text-center text-2xl">开发平台</div>
       <div className="col-span-3 lg:col-span-1">
         <div className="flex flex-row items-center justify-center float-right">
@@ -77,4 +77,4 @@ export default function Platforms() {
       </div>
     </div>
   );
-}
+});

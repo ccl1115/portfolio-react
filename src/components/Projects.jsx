@@ -1,7 +1,7 @@
-import React from "react";
-export default function Projects() {
+import React, { forwardRef } from "react";
+export default forwardRef((_, ref) => {
   return (
-    <div className="blocks text-white">
+    <div ref={ref} className="blocks text-white">
       <div className="col-span-3 text-center text-2xl mb-15">公司和项目</div>
       <div className="col-span-3 lg:col-span-1 text-right">
         <p className="text-sm">北京千橡科技有限公司</p>
@@ -84,4 +84,4 @@ export default function Projects() {
       </div>
     </div>
   );
-}
+});

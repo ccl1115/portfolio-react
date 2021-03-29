@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
 import Icon from './Icon.jsx';
-export default function Languages() {
+export default forwardRef((_, ref) => {
   return (
-    <div className="blocks text-white">
+    <div ref={ref} className="blocks text-white">
       <div className="col-span-3 text-center text-2xl mb-15">使用的语言</div>
       <div className="col-span-3 lg:col-span-1">
         <div className="flex flex-row items-center justify-center float-right">
@@ -52,4 +52,4 @@ export default function Languages() {
       </div>
     </div>
   );
-}
+})
